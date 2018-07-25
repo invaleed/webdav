@@ -1,2 +1,2 @@
 # webdav
-Docker webdav with persistent storage
+Docker webdav with persistent storage and htpasswd
