@@ -14,7 +14,7 @@ ADD share.conf /etc/lighttpd/conf-available/20-share.conf
 RUN lighty-enable-mod auth webdav share
 RUN mkdir -p /var/run/lighttpd && chown www-data.www-data /var/run/lighttpd /webdav/input
 
-EXPOSE 8880
+EXPOSE 80
 
 VOLUME /webdav/input
 ENTRYPOINT ["/usr/sbin/lighttpd", "-D", "-f", "/etc/lighttpd/lighttpd.conf"]
