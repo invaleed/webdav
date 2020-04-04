@@ -1,20 +1,41 @@
 # webdav
 Docker image webdav with persistent volume & htpasswd
 
-1. Create directory
+# Webdav
 
+Webdav Docker image with persistent volume & htpasswd
+
+## Usage
+
+Create directory
+
+```bash
 mkdir -p /docker/data
+```
 
-2. Grant access docker user to the folder
-
+Grant access docker user to the folder
+```bash
 chown -R docker:docker /docker  
+```
 
-3. Generate username/password
-
+Generate username/password
+```bash
 htpasswd -c /docker/.htpasswd _username_
+```
+Run the docker images
 
-4. Run the docker images
+```bash
+docker run -d -p 8880:80 \
+-v /docker/data/:/webdav/input/ \
+-v /docker/.htpasswd:/webdav/htpasswd:ro \
+--name webdav \
+invaleed/webdav:latest
+```
 
-docker run -d -p 8880:80 -v /docker/data/:/webdav/input/ -v /docker/.htpasswd:/webdav/htpasswd:ro  --name webdav invaleed/webdav:latest
+Access Webdav
+```bash
+http://server:8880
+```
 
-5. Access to ---> http://server:8880
+Done
+
