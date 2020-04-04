@@ -1,10 +1,6 @@
 # webdav
 Docker image webdav with persistent volume & htpasswd
 
-# Webdav
-
-Webdav Docker image with persistent volume & htpasswd
-
 ## Usage
 
 Create directory
