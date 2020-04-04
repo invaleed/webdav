@@ -1,5 +1,5 @@
 # webdav
-Docker image webdav with persistent volume & htpasswd
+Webdav docker image with persistent volume & htpasswd
 
 ## Usage
 
